@@ -2,13 +2,13 @@
     <p>
       <label>
         <input type="checkbox" />
-        <span>Fregola</span>
+        <span class="ingredient">Fregola</span>
       </label>
     </p>
     <p>
       <label>
         <input type="checkbox" checked="checked" />
-        <span>Prezzemolo</span>
+        <span class="ingredient">Prezzemolo</span>
       </label>
     </p>
 </form>
