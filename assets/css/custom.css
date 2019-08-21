@@ -1,5 +1,4 @@
 /* My CSS file */
 .ingredient {
- font-size: 2000%;
- color: blue;
+ font-size: 125% !important; /* Add `!important` at the end of a rule to prioritise it. */
 }
