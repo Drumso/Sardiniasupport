@@ -8,7 +8,8 @@ Copy the following text:
 ```
 ---
 layout: ingredients_list
-ingredients_list: [fregola, prezzemolo, aglio, olio]
+ingredients_group_name: Base
+ingredients_list: [Fregola, Prezzemolo]
 ---
 ```
 
