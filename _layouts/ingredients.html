@@ -1,17 +1,14 @@
 ---
 layout: default
-comments: true
 ---
-
-<h1>{{ page.title }}</h1>
-<article>
+<form class="ingredient_list" action="#">
+  {% for ingredient_name in page.ingredients %}
+  <p>
+      <label>
+        <input type="checkbox" />
+        <span class="ingredient">{{ ingredient_name }}</span>
+      </label>
+    </p>
+  {% endfor %}
+</form>
 {{ content }}
-</article>
-{% if page.categories %}
-  {% if page.categories.size > 0 %}
-    <p class="post-categories">Categories: {{ page.categories | join: ', ' }}</p>
-  {% else %}
- <p class="post-categories">Uncategorised</p>
-  {% endif %}
-{% endif %}
-<p class="post-publishing-note">Published on {{ page.date | date: "%d/%m/%Y" }}</p>
