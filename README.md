@@ -19,6 +19,9 @@ ingredients_list: [fregola, prezzemolo, aglio, olio]
 ### To edit CSS
 Go here: [assets/css/custom.css](https://github.com/Drumso/Sardiniasupport/blob/master/assets/css/custom.css)
 
+- Each ingredient is `.ingredient`
+- The whole form is `.ingredient_list`
+
 ### To edit ingredients layout (Jekill + HTML):
 Go here: [_layouts/ingredients_list.html](https://github.com/Drumso/Sardiniasupport/blob/master/_layouts/ingredients_list.html)
 
