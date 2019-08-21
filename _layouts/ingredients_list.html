@@ -1,14 +1,19 @@
 ---
 layout: default
 ---
-<form class="ingredient_list" action="#">
+<fieldset class="group">
+<legend> {{ page.ingredients_group_name }} </legend> 
+<ul class="checkbox"> 
   {% for ingredient_name in page.ingredients_list %}
-  <p>
+  <li>
+    <p>
       <label>
-        <input type="checkbox" />
+        <input type="checkbox"/>
         <span class="ingredient">{{ ingredient_name }}</span>
       </label>
     </p>
+  </li> 
   {% endfor %}
-</form>
+</ul>
+</fieldset> 
 {{ content }}
