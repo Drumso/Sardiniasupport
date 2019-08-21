@@ -1,5 +1,8 @@
 # Sardiniasupport
 
+### Test pages
+[Fregola](https://drumso.github.io/Sardiniasupport/fregola)
+
 ## Add a new ingredient list for a recipe:
 
 Copy the following text:
