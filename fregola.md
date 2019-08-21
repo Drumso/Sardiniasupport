@@ -1,5 +1,5 @@
 ---
 layout: ingredients_list
 ingredients_group_name: Base
-ingredients_list: [Fregola, Prezzemolo]
+ingredients_list: [Fregula, Parsley, Tomato, Garlic]
 ---
