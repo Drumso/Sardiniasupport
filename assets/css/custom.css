@@ -58,7 +58,7 @@ p {
 }
 
 li {
-  padding-top: 1px; 
+  padding-top: 1px; /* Needed to avoid the checked checkbox going to the preceding column */
   margin-top: 28px;
 }
 
