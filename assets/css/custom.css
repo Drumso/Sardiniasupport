@@ -1,6 +1,6 @@
-/* My CSS file */
+/* My CSS file
 .ingredient {
- font-size: 125% !important; /* Add `!important` at the end of a rule to prioritise it. */
+ font-size: 125% !important; Add `!important` at the end of a rule to prioritise it.
 }
 
 fieldset.group  { 
@@ -37,4 +37,37 @@ ul.checkbox li {
 
 ul.checkbox li label {
   margin-left: 0.2em; 
+} */
+
+.ingredient {
+  /* font-weight: lighter; */
+}
+
+.ingredient_quantity {
+  font-weight: lighter;
+  font-weight: bold;
+  margin-left: 0em;
+}
+
+.ingredients_list {
+  columns: 1;
+}
+
+p {
+  margin: 0;
+}
+
+li {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+li:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 500px) {
+  .ingredients_list {
+    columns: 2;
+  }
 }
