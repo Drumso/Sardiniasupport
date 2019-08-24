@@ -3,16 +3,22 @@ layout: default
 ---
 <fieldset class="group">
 <legend> {{ page.ingredients_group_name }} </legend> 
-<ul class="checkbox"> 
-  {% for ingredient_name in page.ingredients_list %}
+<ul class="ingredients_list checkbox"> 
+  {% for ingredient in page.ingredients_list %}
+  {% assign ingredient_data = ingredient | split: "@" %}
+  {% assign ingredient_name = ingredient_data[0] %}
+  {% assign ingredient_quantity = ingredient_data[1] "@" %}
   <li>
     <p>
       <label>
-        <input type="checkbox"/>
-        <span class="ingredient">{{ ingredient_name }}</span>
+        <input type="checkbox" />
+        <span class="ingredient">
+          <span class="ingredient_quantity">{{ ingredient_quantity }}</span>
+          {{ ingredient_name }}
+        </span>
       </label>
     </p>
-  </li> 
+  </li>
   {% endfor %}
 </ul>
 </fieldset> 
