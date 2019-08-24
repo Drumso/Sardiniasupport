@@ -58,8 +58,8 @@ p {
 }
 
 li {
-  margin-top: 14px;
-  margin-bottom: 14px;
+  padding-top: 1px; 
+  margin-top: 28px;
 }
 
 li:first-child {
