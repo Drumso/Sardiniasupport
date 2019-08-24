@@ -41,7 +41,6 @@ ul.checkbox li label {
 
 .ingredient {
   /* font-weight: lighter; */
- font-size: 150% !important; Add `!important` at the end of a rule to prioritise it.
 }
 
 .ingredient_quantity {
