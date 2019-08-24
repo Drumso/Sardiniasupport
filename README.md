@@ -1,11 +1,11 @@
 # Sardiniasupport
 
 ### Test pages
-[Fregola](https://drumso.github.io/Sardiniasupport/panada)
+[Panada](https://drumso.github.io/Sardiniasupport/panada)
 
 ## Add a new ingredient list for a recipe:
 
-Copy the following text:
+Copy the following text:fregola
 
 1. Copy the following text:
 ```
