@@ -97,6 +97,10 @@ fieldset.group legend {
   columns: 1;
 }
 
+.ingredients_list_1 {
+  columns: 1;
+}
+
 p {
   margin: 0;
 }
