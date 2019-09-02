@@ -118,4 +118,9 @@ li:first-child {
   .ingredients_list {
     columns: 2;
   }
+
+@media (min-width: 500px) {
+  .ingredients_list_1 {
+    columns: 2;
+  }
 }
