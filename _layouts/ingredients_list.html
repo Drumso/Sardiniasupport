@@ -24,6 +24,31 @@ layout: default
   </li>
   {% endfor %}
 </ul>
+	
+
+
+<div class="section-header">
+   <span class="section-header__title">Base dough</span>
+ </div>
+
+<ul class="ingredients_list_1 checkbox"> 
+  {% for ingredient in page.ingredients_list_1 %}
+  {% assign ingredient_data = ingredient | split: "@" %}
+  {% assign ingredient_name = ingredient_data[0] %}
+  {% assign ingredient_quantity = ingredient_data[1] %}
+  <li>
+    <p>
+      <label>
+        <input type="checkbox" />
+        <span class="ingredient">
+          <span class="ingredient_quantity">{{ ingredient_quantity }}</span>
+          {{ ingredient_name }}
+        </span>
+      </label>
+    </p>
+  </li>
+  {% endfor %}
+</ul>
   
 </fieldset> 
 {{ content }}
