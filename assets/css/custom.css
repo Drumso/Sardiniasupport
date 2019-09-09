@@ -98,10 +98,6 @@ fieldset.group legend {
   columns: 1;
 }
 
-.ingredients_list_1 {
-  columns: 1;
-}
-
 
 p {
   margin: 0;
@@ -118,10 +114,6 @@ li:first-child {
 
 @media (min-width: 500px) {
   .ingredients_list {
-    columns: 2;
-  }
- @media (min-width: 500px) {
-  .ingredients_list_1 {
     columns: 2;
   }
 }
