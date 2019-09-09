@@ -31,8 +31,8 @@ layout: default
    <span class="section-header__title">Base dough</span>
  </div>
 
-<ul class="ingredients_list checkbox"> 
-  {% for ingredient in page.ingredients_list %}
+<ul class="ingredients_list_1 checkbox"> 
+  {% for ingredient in page.ingredients_list_1 %}
   {% assign ingredient_data = ingredient | split: "@" %}
   {% assign ingredient_name = ingredient_data[0] %}
   {% assign ingredient_quantity = ingredient_data[1] %}
