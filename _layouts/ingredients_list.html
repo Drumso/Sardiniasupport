@@ -3,7 +3,7 @@ layout: default
 ---
 <fieldset class="group">
    <div class="section-header">
-	   <span class="section-header__title">{{ page.ingredients_group_name }}</span>
+	   <span class="section-header__title">{{ page.ingredients_first_name }}</span>
    </div>
 <legend></legend> 
 <ul class="ingredients_list checkbox"> 
@@ -24,6 +24,10 @@ layout: default
   </li>
   {% endfor %}
 </ul>
+	
+ <div class="section-header">
+	   <span class="section-header__title">{{ page.ingredients_second_name }}</span>
+   </div>
 
 </fieldset> 
 {{ content }}
