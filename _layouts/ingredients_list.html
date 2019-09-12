@@ -24,5 +24,11 @@ layout: default
   </li>
   {% endfor %}
 </ul>
+
+<fieldset class="group">
+   <div class="section-header">
+	   <span class="section-header__title">{{ page.ingredients_group_name }}</span>
+{% include complex_ingredient_list.html %}
+
 </fieldset> 
 {{ content }}
