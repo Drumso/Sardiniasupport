@@ -39,6 +39,9 @@ ul.checkbox li label {
   margin-left: 0.2em; 
 } */
 
+fieldset.group  { 
+  border-color: #dddddd; 
+} 
 
 fieldset.group legend { 
   margin: 0; 
@@ -46,7 +49,6 @@ fieldset.group legend {
   font-weight: bold; 
   margin-left: 20px; 
   font-size: 150%;
-  border-color: #dddddd;
  }
 
 .section-header {
