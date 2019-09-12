@@ -6,7 +6,7 @@ layout: default
 	   <span class="section-header__title">{{ page.ingredients_first_name }}</span>
    </div>
 <legend></legend> 
-<ul class="ingredients_list_first checkbox"> 
+<ul class="ingredients_list checkbox"> 
   {% for ingredient in page.ingredients_list_first %}
   {% assign ingredient_data = ingredient | split: "@" %}
   {% assign ingredient_name = ingredient_data[0] %}
@@ -29,7 +29,7 @@ layout: default
 	   <span class="section-header__title">{{ page.ingredients_second_name }}</span>
    </div>
 
-<ul class="ingredients_list_second checkbox"> 
+<ul class="ingredients_list checkbox"> 
   {% for ingredient in page.ingredients_list_second %}
   {% assign ingredient_data = ingredient | split: "@" %}
   {% assign ingredient_name = ingredient_data[0] %}
