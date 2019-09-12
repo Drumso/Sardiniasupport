@@ -24,7 +24,8 @@ layout: default
   </li>
   {% endfor %}
 </ul>
-	
+
+{% if page.ingredients_list_second.size > 0 %}
  <div class="section-header">
 	   <span class="section-header__title">{{ page.ingredients_second_name }}</span>
    </div>
@@ -47,6 +48,8 @@ layout: default
   </li>
   {% endfor %}
 </ul>
+
+{% endif %}
 
 </fieldset> 
 {{ content }}
