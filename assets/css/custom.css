@@ -46,7 +46,7 @@ fieldset.group legend {
   font-weight: bold; 
   margin-left: 20px; 
   font-size: 150%;
-  background: #dddddd;
+  border-color: #dddddd;
  }
 
 .section-header {
