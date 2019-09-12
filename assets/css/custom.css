@@ -94,7 +94,11 @@ fieldset.group legend {
   margin-left: 0em;
 }
 
-.ingredients_list {
+.ingredients_list_first {
+  columns: 1;
+}
+
+.ingredients_list_second {
   columns: 1;
 }
 
@@ -113,7 +117,12 @@ li:first-child {
 }
 
 @media (min-width: 500px) {
-  .ingredients_list {
+  .ingredients_list_first {
+    columns: 2;
+  }
+
+@media (min-width: 500px) {
+  .ingredients_list_second {
     columns: 2;
   }
 }
