@@ -40,7 +40,8 @@ ul.checkbox li label {
 } */
 
 fieldset.group  { 
-  border-color: #ffff00; 
+  border-color: #ffff00;
+  border-style: solid;
 } 
 
 fieldset.group legend { 
