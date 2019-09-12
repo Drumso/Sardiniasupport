@@ -29,5 +29,24 @@ layout: default
 	   <span class="section-header__title">{{ page.ingredients_second_name }}</span>
    </div>
 
+<ul class="complex_ingredient_list checkbox"> 
+  {% for ingredient in page.complex_ingredient_list %}
+  {% assign ingredient_data = ingredient | split: "@" %}
+  {% assign ingredient_name = ingredient_data[0] %}
+  {% assign ingredient_quantity = ingredient_data[1] %}
+  <li>
+    <p>
+      <label>
+        <input type="checkbox" />
+        <span class="ingredient">
+          <span class="ingredient_quantity">{{ ingredient_quantity }}</span>
+          {{ ingredient_name }}
+        </span>
+      </label>
+    </p>
+  </li>
+  {% endfor %}
+</ul>
+
 </fieldset> 
 {{ content }}
