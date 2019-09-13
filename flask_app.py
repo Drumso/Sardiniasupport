@@ -7,7 +7,8 @@ import werkzeug
 import werkzeug.exceptions
 
 import subprocess
-git_result = subprocess.run(["git", "pull"])
+repo_dir = os.path.join(os.getcwd(), "Sardiniasupport")
+git_result = subprocess.run(["git", "pull"], cwd=repo_dir)
 
 def create_app():
     """Application factory function.
