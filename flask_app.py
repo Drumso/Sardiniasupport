@@ -13,8 +13,8 @@ def handle_errors(e):
     return str(e), 500
 
 @app.route('/')
-def hello_world():
+def default():
     try:
-        return render_template('base.html')
+        return render_template('default.html')
     except Exception as e:
         return str(e)
