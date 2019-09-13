@@ -8,5 +8,5 @@ app = Flask(__name__)
 def hello_world():
     try:
         return render_template('base.html')
-    except Error as e:
+    except Exception as e:
         return str(e)
