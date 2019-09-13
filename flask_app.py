@@ -7,8 +7,15 @@ import werkzeug
 import werkzeug.exceptions
 
 import subprocess
-repo_dir = os.path.join(os.getcwd(), "Sardiniasupport")
-git_result = subprocess.run(["git", "pull"], cwd=repo_dir)
+
+
+try:
+    repo_dir = os.path.join(os.getcwd(), "Sardiniasupport")
+    git_result = subprocess.run(["git", "pull"], cwd=repo_dir)
+except Exception as e:
+    git_result = str(e)
+    print(e)
+
 
 def create_app():
     """Application factory function.
@@ -37,10 +44,9 @@ def create_app():
     @app.route('/')
     def default():
         try:
-            return render_template('default.html', data=str(git_result) + "\n" + str(git_result.stdout) + "\n" + str(git_result.stderr))
+            return render_template('default.html', data=str(git_result))  # + "\n" + str(git_result.stdout) + "\n" + str(git_result.stderr))
         except Exception as e:
             return "Exception: " + str(e)
    
     # End of main function: 'create_app'
     return app
-    
