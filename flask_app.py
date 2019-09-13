@@ -7,7 +7,9 @@ import werkzeug
 import werkzeug.exceptions
 
 import subprocess
-subprocess.run(["git", "pull"])
+# subprocess.run(["git", "pull"])
+
+git_result = subprocess.check_output("/path/to/wmctrl -l", shell=True)
 
 def create_app():
     """Application factory function.
@@ -34,6 +36,7 @@ def create_app():
     # Main page
     @app.route('/')
     def default():
+        return str(git_result)
         try:
             return render_template('default.html')
         except Exception as e:
