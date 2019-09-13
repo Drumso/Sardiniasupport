@@ -7,9 +7,7 @@ import werkzeug
 import werkzeug.exceptions
 
 import subprocess
-# subprocess.run(["git", "pull"])
-
-git_result = subprocess.check_output("git pull", shell=False)
+git_result = subprocess.run(["git", "pull"])
 
 def create_app():
     """Application factory function.
