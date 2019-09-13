@@ -38,7 +38,7 @@ def create_app():
         try:
             return render_template('default.html', data=str(git_result) + "\n" + str(git_result.stdout) + "\n" + str(git_result.stderr))
         except Exception as e:
-            return str(e)
+            return "Exception: " + str(e)
    
     # End of main function: 'create_app'
     return app
