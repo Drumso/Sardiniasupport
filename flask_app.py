@@ -25,6 +25,7 @@ def create_app():
     """
     
     app = Flask(__name__)
+    app.debug = True
 
     # Intercepts generic server errors and logs them
     @app.errorhandler(werkzeug.exceptions.HTTPException)
