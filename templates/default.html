@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{-{ site.lang | default: "en-US" }}">
   <head>
-  <!-- Commit: {{ site.github.build_revision }} -->
+  <!-- Commit: {-{ site.github.build_revision }} -->
 
 
     <!-- Material design CSS -->
@@ -9,9 +9,9 @@
     <!-- Material design JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/custom.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" type="text/css" href="{-{ '/assets/css/custom.css?v=' | append: site.github.build_revision | relative_url }}">
     <!-- Custom JS -->
-    <script src="{{ '/assets/js/main_script.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script src="{-{ '/assets/js/main_script.js?v=' | append: site.github.build_revision | relative_url }}"></script>
   </head>
   <body>
     <main id="content" class="main-content" role="main">
