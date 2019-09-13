@@ -35,9 +35,8 @@ def create_app():
     # Main page
     @app.route('/')
     def default():
-        return str(git_result) + "\n" + str(git_result.stdout) + "\n" + str(git_result.stderr)
         try:
-            return render_template('default.html')
+            return render_template('default.html', data=str(git_result) + "\n" + str(git_result.stdout) + "\n" + str(git_result.stderr))
         except Exception as e:
             return str(e)
    
