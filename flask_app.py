@@ -6,6 +6,9 @@ from flask import Flask, render_template, request, json, send_from_directory
 import werkzeug
 import werkzeug.exceptions
 
+import subprocess
+subprocess.run(["git", "pull"])
+
 def create_app():
     """Application factory function.
 
