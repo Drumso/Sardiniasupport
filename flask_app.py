@@ -8,7 +8,7 @@ import werkzeug.exceptions
 
 import subprocess
 
-# Test upload 2
+# Test upload tre
 try:
     repo_dir = os.path.join(os.getcwd(), "Sardiniasupport")
     git_result = subprocess.run(["git", "pull"], cwd=repo_dir)
