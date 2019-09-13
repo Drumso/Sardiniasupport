@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Intercepts generic server errors and logs them
 @app.errorhandler(werkzeug.exceptions.HTTPException)
 def handle_errors(e):
-    logging.error(str(e))
+#     logging.error(str(e))
     return str(e), 500
 
 @app.route('/')
