@@ -6,4 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return render_template('base.html')
+    try:
+        return render_template('base.html')
+    except Error as e:
+        return str(e)
