@@ -47,6 +47,10 @@ def create_app():
             return render_template('default.html', data=str(git_result))  # + "\n" + str(git_result.stdout) + "\n" + str(git_result.stderr))
         except Exception as e:
             return "Exception: " + str(e)
+
+    @app.route('/recipe/<recipe_name>/')
+    def recipes_pages(recipe_name):
+        return str(recipe_name)
    
     # End of main function: 'create_app'
     return app
