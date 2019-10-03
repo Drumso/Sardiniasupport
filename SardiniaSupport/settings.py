@@ -25,7 +25,7 @@ SECRET_KEY = '9m@gou@3y*__9k1e#q4*d+(+f+sd^79i_0zq!00&p_d)uhv6n5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['drumso.pythonanywhere.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
