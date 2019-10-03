@@ -52,5 +52,5 @@ def create_app():
     def recipes_pages(recipe_name):
         return str(recipe_name)
    
-    # End of main function: 'create_app'
+    # End of recipes function: 'create_app'
     return app
