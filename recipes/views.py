@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 from .models import Dish
 # ...
-def dish(request, dish_id):
+def dish_view(request, dish_id):
     try:
         dish = Dish.objects.get(pk=dish_id)
     except Dish.DoesNotExist:
