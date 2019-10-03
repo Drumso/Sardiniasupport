@@ -1,8 +1,12 @@
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from django.shortcuts import render
 
 from .models import Dish
 # ...
+
+def index(request):
+    return HttpResponse("output")
+
 def dish_view(request, dish_id):
     try:
         dish = Dish.objects.get(pk=dish_id)
