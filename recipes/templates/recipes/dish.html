@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!-- Commit: {-{ site.github.build_revision }} -->
+    <!--
+Data:
+{#{{ data }}#}
+
+-->
+    <title>{{ dish.name }}</title>
+    <!-- Material design CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Material design JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom CSS -->
+{#    <link rel="stylesheet" type="text/css"#}
+{#          href="{-{ '/assets/css/custom.css?v=' | append: site.github.build_revision | relative_url }}">#}
+{#    <!-- Custom JS -->#}
+{#    <script src="{-{ '/assets/js/main_script.js?v=' | append: site.github.build_revision | relative_url }}"></script>#}
+</head>
+<body>
+<main id="content" class="main-content" role="main">
+
+
+    <fieldset class="group">
+        {% for dish_component in dish.dish_components %}
+
+
+            <div class="section-header">
+                <span class="section-header__title">{{ dish_component }}</span>
+            </div>
+            <legend></legend>
+            <ul class="ingredients_list checkbox">
+                {% for ingredient in dish_component.ingredients %}
+                    <li>
+                        <p>
+                            <label>
+                                <input type="checkbox"/>
+                                <span class="ingredient">
+          <span class="ingredient_quantity">{{ ingredient.amount }}{{ ingredient.base_ingredient.measure_unit }}</span>
+          {{ ingredient.base_ingredient.name }}
+        </span>
+                            </label>
+                        </p>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        {% endfor %}
+    </fieldset>
+
+
+</main>
+</body>
+</html>
