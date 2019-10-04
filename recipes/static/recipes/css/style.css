@@ -1,0 +1,124 @@
+/* My CSS file
+.ingredient {
+ font-size: 125% !important; Add `!important` at the end of a rule to prioritise it.
+}
+
+fieldset.group  { 
+  margin: 0; 
+  padding: 0; 
+  margin-bottom: 1.25em; 
+  padding: .125em; 
+} 
+
+fieldset.group legend { 
+  margin: 0; 
+  padding: 0; 
+  font-weight: bold; 
+  margin-left: 2em; 
+} 
+
+
+ul.checkbox  {
+  margin: 0;
+  padding: 0;
+  margin-left: 1em;
+  list-style: none; 
+}
+
+ul.checkbox li input {
+  margin-right: .25em; 
+}
+
+ul.checkbox li {
+ border: 1px transparent solid;
+ float: left;
+ min-width: 15em;
+}
+
+ul.checkbox li label {
+  margin-left: 0.2em; 
+} */
+
+fieldset.group  { 
+  border-color: #dddddd;
+  border-style: solid;
+} 
+
+fieldset.group legend { 
+  margin: 0; 
+  padding: 0; 
+  font-weight: bold; 
+  margin-left: 20px; 
+  font-size: 150%;
+ }
+
+.section-header {
+	position: relative;
+	text-align: center;
+}
+
+.section-header:before {
+	content: '';
+	z-index: 1;
+
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+
+	width: 100%;
+	height: 1px;
+
+	background: #dddddd;
+}
+
+	.section-header__title {
+		position: relative;
+		z-index: 2;
+
+		background: #fafafa;
+		padding: 5px 20px;
+
+		font-weight: 300;
+		font-size: 150%;
+		text-transform: uppercase;
+
+		display: inline-block;
+
+		color: #444444;
+	}
+
+.ingredient {
+  /* font-weight: lighter; */
+}
+
+.ingredient_quantity {
+  font-weight: lighter;
+  font-weight: bold;
+  margin-left: 0em;
+}
+
+.ingredients_list {
+  columns: 1;
+}
+
+
+p {
+  margin: 0;
+}
+
+li {
+  padding-top: 1px; /* Needed to avoid the checked checkbox going to the preceding column */
+  margin-top: 28px;
+}
+
+li:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 500px) {
+  .ingredients_list {
+    columns: 2;
+  }
+
+}

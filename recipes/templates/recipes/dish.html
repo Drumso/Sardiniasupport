@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -13,10 +14,9 @@ Data:
     <!-- Material design JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Custom CSS -->
-{#    <link rel="stylesheet" type="text/css"#}
-{#          href="{-{ '/assets/css/custom.css?v=' | append: site.github.build_revision | relative_url }}">#}
-{#    <!-- Custom JS -->#}
-{#    <script src="{-{ '/assets/js/main_script.js?v=' | append: site.github.build_revision | relative_url }}"></script>#}
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/style.css' %}">
+    <!-- Custom JS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'recipes/js/main.js' %}">
 </head>
 <body>
 <main id="content" class="main-content" role="main">
@@ -41,9 +41,11 @@ Data:
               {% if ingredient.amount != 0.0 %}
                 <span class="ingredient_quantity">
                     {{ ingredient.amount | floatformat }}{{ ingredient.base_ingredient.measure_unit }}
-                </span>{{ ingredient.base_ingredient.get_name }}
+                </span>
+                  {{ ingredient.base_ingredient.get_name }}
               {% else %}
-                {{ ingredient.base_ingredient.get_name }}{{ " to taste" }}
+                {{ ingredient.base_ingredient.get_name }}
+                  <span class="ingredient_quantity">{{ " to taste" }}</span>
               {% endif %}
         </span>
                             </label>

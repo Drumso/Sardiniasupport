@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 def capital_spaced_from_lower_underscored(name: str) -> str:
@@ -45,18 +46,21 @@ class IngredientInstance(models.Model):
 
 class DishComponent(models.Model):
     unique_name = models.CharField(unique=True, max_length=200)
+    custom_name = models.CharField(max_length=200, default="")
     ingredients = models.ManyToManyField(IngredientInstance)
 
     def __str__(self):
-        return self.get_name()
+        return capital_spaced_from_lower_underscored(self.unique_name)
 
     def get_name(self):
-        return capital_spaced_from_lower_underscored(self.unique_name)
+        name = self.custom_name if self.custom_name != "" else self.unique_name
+        return capital_spaced_from_lower_underscored(name)
 
 
 class Dish(models.Model):
     unique_name = models.CharField(unique=True, max_length=200)
     dish_components = models.ManyToManyField(DishComponent)
+    pub_date = models.DateField(default=timezone.now)
 
     def __str__(self):
         return self.get_name()
