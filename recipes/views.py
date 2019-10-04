@@ -1,10 +1,12 @@
 from django.http import Http404, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.views.decorators.clickjacking import xframe_options_exempt
 
 from .models import Dish
 # ...
 
+@xframe_options_exempt
 class IndexView(generic.ListView):
     template_name = 'recipes/index.html'
     context_object_name = 'all_recipes_list'
@@ -13,6 +15,7 @@ class IndexView(generic.ListView):
         """Return the last five published questions."""
         return Dish.objects.all()
 
+@xframe_options_exempt
 def dish_view(request, dish_name):
     dish_set = Dish.objects.filter(unique_name__exact=dish_name)
     if len(dish_set) < 1:
