@@ -10,6 +10,7 @@ def index(request):
 def dish_view(request, dish_id):
     try:
         dish = Dish.objects.get(pk=dish_id)
+        dish.dish_components.iterator()
     except Dish.DoesNotExist:
         raise Http404("Dish does not exist")
     return render(request, 'recipes/dish.html', {'dish': dish})

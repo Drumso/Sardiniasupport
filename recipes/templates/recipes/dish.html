@@ -23,7 +23,7 @@ Data:
 
 
     <fieldset class="group">
-        {% for dish_component in dish.dish_components %}
+        {% for dish_component in dish.dish_components.all %}
 
 
             <div class="section-header">
@@ -31,7 +31,7 @@ Data:
             </div>
             <legend></legend>
             <ul class="ingredients_list checkbox">
-                {% for ingredient in dish_component.ingredients %}
+                {% for ingredient in dish_component.ingredients.all %}
                     <li>
                         <p>
                             <label>
