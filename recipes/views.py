@@ -6,7 +6,7 @@ from django.views.decorators.clickjacking import xframe_options_exempt
 from .models import Dish
 # ...
 
-@xframe_options_exempt
+
 class IndexView(generic.ListView):
     template_name = 'recipes/index.html'
     context_object_name = 'all_recipes_list'
