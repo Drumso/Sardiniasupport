@@ -27,7 +27,7 @@ Data:
 
 
             <div class="section-header">
-                <span class="section-header__title">{{ dish_component }}</span>
+                <span class="section-header__title">{{ dish_component.get_name }}</span>
             </div>
             <legend></legend>
             <ul class="ingredients_list checkbox">
@@ -37,8 +37,14 @@ Data:
                             <label>
                                 <input type="checkbox"/>
                                 <span class="ingredient">
-          <span class="ingredient_quantity">{{ ingredient.amount }}{{ ingredient.base_ingredient.measure_unit }}</span>
-          {{ ingredient.base_ingredient.name }}
+
+              {% if ingredient.amount != 0.0 %}
+                <span class="ingredient_quantity">
+                    {{ ingredient.amount | floatformat }}{{ ingredient.base_ingredient.measure_unit }}
+                </span>{{ ingredient.base_ingredient.get_name }}
+              {% else %}
+                {{ ingredient.base_ingredient.get_name }}{{ " to taste" }}
+              {% endif %}
         </span>
                             </label>
                         </p>
