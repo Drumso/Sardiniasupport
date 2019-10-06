@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 
+from recipes.measures import Measures
+
 
 def capital_spaced_from_lower_underscored(name: str) -> str:
     return name.capitalize().replace("_", " ")
@@ -28,20 +30,27 @@ class BaseIngredient(AbstractIngredient):
     unsaturated_fats = models.FloatField(default=0.0)
     proteins = models.FloatField(default=0.0)
     carbohydrates = models.FloatField(default=0.0)
-    measure_unit = models.CharField(max_length=25, default="g")
-    allergens = models.ManyToManyField(Allergen, default=None)
+    allergens = models.ManyToManyField(Allergen, blank=True)
     is_vegan = models.BooleanField(default=False)
     is_vegetarian = models.BooleanField(default=False)
     is_ok_lactose = models.BooleanField(default=False)
     is_ok_gluten = models.BooleanField(default=False)
+    is_low_lactose = models.BooleanField(default=False)
 
 
 class IngredientInstance(models.Model):
     base_ingredient = models.ForeignKey(BaseIngredient, on_delete=models.CASCADE)
     amount = models.FloatField(default=0.0)
+    measure_type = models.CharField(max_length=25, default="weight", blank=True, choices=Measures.allowed_measure_types)
+    measure_unit_code = models.CharField(max_length=25, default="g", blank=True)
 
     def __str__(self):
-        return f"{self.base_ingredient.get_name()} - {self.amount}{self.base_ingredient.measure_unit}"
+        name = f"{self.base_ingredient.get_name()}, "
+        if self.measure_type != "extra":
+            name += f"{self.amount}{self.measure_unit_code}"
+        else:
+            name += f"{self.measure_unit_code}"
+        return name
 
 
 class DishComponent(models.Model):
@@ -60,10 +69,10 @@ class DishComponent(models.Model):
 class Dish(models.Model):
     unique_name = models.CharField(unique=True, max_length=200)
     dish_components = models.ManyToManyField(DishComponent)
-    pub_date = models.DateField(default=timezone.now)
+
 
     def __str__(self):
-        return self.get_name()
+        return self.name()
 
-    def get_name(self):
+    def name(self):
         return capital_spaced_from_lower_underscored(self.unique_name)

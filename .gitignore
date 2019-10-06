@@ -202,3 +202,8 @@ dmypy.json
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
+
+
+# Uploaded images
+media/markdownx/
+static/

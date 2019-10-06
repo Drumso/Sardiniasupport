@@ -1,14 +1,19 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+    {% get_current_language as LANGUAGE_CODE %}
+    <!-- Current language: {{ LANGUAGE_CODE }} -->
+
     <!-- Commit: {-{ site.github.build_revision }} -->
     <!--
 Data:
 {#{{ data }}#}
 
 -->
-    <title>{{ dish.name }}</title>
+    {%  comment %}For translators: name of the dish used as title{% endcomment %}
+    <title>{% trans dish.name context "dish title" %}</title>
     <!-- Material design CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Material design JavaScript -->

@@ -2,6 +2,7 @@ from django.http import Http404, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.views.decorators.clickjacking import xframe_options_exempt
+from django.utils.translation import gettext as _
 
 from .models import Dish
 # ...
