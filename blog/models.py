@@ -12,13 +12,21 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class KeyWord(models.Model):
+    name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
+    main_image_url = models.CharField(max_length=250, default="")
     body = MarkdownxField()
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField('Category', related_name='posts')
+    keywords = models.ManyToManyField('KeyWord', related_name='posts')
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     def __str__(self):

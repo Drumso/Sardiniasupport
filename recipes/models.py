@@ -57,6 +57,7 @@ class DishComponent(models.Model):
     unique_name = models.CharField(unique=True, max_length=200)
     custom_name = models.CharField(max_length=200, default="")
     ingredients = models.ManyToManyField(IngredientInstance)
+    required_time_min = models.IntegerField(default=0)
 
     def __str__(self):
         return capital_spaced_from_lower_underscored(self.unique_name)
@@ -69,7 +70,15 @@ class DishComponent(models.Model):
 class Dish(models.Model):
     unique_name = models.CharField(unique=True, max_length=200)
     dish_components = models.ManyToManyField(DishComponent)
-
+    energy = models.IntegerField(default=0)
+    servings = models.IntegerField(default=4)
+    difficulty_levels = [
+        ("easy", "easy"),
+        ("medium", "medium"),
+        ("advanced", "advanced"),
+        ("hard", "hard"),
+    ]
+    difficulty = models.CharField(max_length=25, default="medium", blank=True, choices=difficulty_levels)
 
     def __str__(self):
         return self.name()
