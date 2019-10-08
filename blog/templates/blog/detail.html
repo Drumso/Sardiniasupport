@@ -3,17 +3,16 @@
 {% load staticfiles %}
 
 {% block page_content %}
-<div class="col-md-8 offset-md-2">
-    <h1>{{ post.title }}</h1>
-    <small>
-        {{ post.created_on.date }} |&nbsp;
-        Categories:&nbsp;
+<div class="blog-post">
+    <h2 class="blog-post-title">{{ post.title }}</h2>
+    <p class="blog-post-meta">
+        {{ post.created_on.date }}
+         | Categories:
         {% for category in post.categories.all %}
         <a href="{% url 'blog:category' category.name %}">
             {{ category.name }}
-        </a>&nbsp;
+        </a>
         {% endfor %}
-    </small>
     <p>{{ post_body | safe | linebreaks }}</p>
     <h3>Leave a comment:</h3>
     <form action="/blog/{{ post.pk }}/" method="post">
