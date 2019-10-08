@@ -30,6 +30,7 @@ class BaseIngredient(AbstractIngredient):
     unsaturated_fats = models.FloatField(default=0.0)
     proteins = models.FloatField(default=0.0)
     carbohydrates = models.FloatField(default=0.0)
+    sugars = models.FloatField(default=0.0)
     allergens = models.ManyToManyField(Allergen, blank=True)
     is_vegan = models.BooleanField(default=False)
     is_vegetarian = models.BooleanField(default=False)
